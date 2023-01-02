@@ -1,1 +1,19 @@
-<h1>Hello, World!</h1>
+{% extends "base.html" %}
+
+{% block title %}Blaggers - Home{% endblock %}
+
+{% block content %}
+    <h1>Posts</h1>
+
+    <div class="posts">
+        <ul>
+            {% for post in object_list %}
+                <li>
+                    {{ post.title }} - {{ post.author }}
+                    <br>
+                    {{ post.content }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
