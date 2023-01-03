@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-{% block title %}Blaggers - Home{% endblock %}
-
 {% block content %}
     <h1>Posts</h1>
 
@@ -9,7 +7,7 @@
         <ul>
             {% for post in object_list %}
                 <li>
-                    {{ post.title }} - {{ post.author }}
+                    <a href="{% url 'post_details' post.pk %}">{{ post.title }} - {{ post.author }}</a>
                     <br>
                     {{ post.content }}
                 </li>

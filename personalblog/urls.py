@@ -1,9 +1,11 @@
 from django.urls import path
-#from . import views
 from .views import HomeView, PostDetailView
 
+'''
+For the 'name' parameter below, those will be used to 
+reference them in HTML templates (for links). 
+'''
 urlpatterns = [
-    #path('', views.home, name='home'),
     path('', HomeView.as_view(), name='home'),
 
     # <int:pk> being the primary key of each post (created automatically)
