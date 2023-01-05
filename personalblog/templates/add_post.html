@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Create Your Own Blog Post! {% endblock %}
+{% block content %}
+    <h1>Add Your Own Post</h1>
+    <hr>
+    <br>
+    <div class="form-group">
+        <form method="POST">
+            <!--Below is a cross-site request forgery token for data security-->
+            {% csrf_token %}
+
+            <!--Below we use the django form system to quickly render a form as a paragraphy easily-->
+            {{ form.as_p }} <!--Can also be as ul, table, and more-->
+            <button>Post</button>
+        </form>
+    </div>
+{% endblock %}
